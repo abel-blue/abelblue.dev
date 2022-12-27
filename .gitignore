@@ -5,16 +5,14 @@
 /.pnp
 .pnp.js
 
-old/
-
 # testing
 /coverage
-
-# production
 /build
+
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -23,3 +21,7 @@ old/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#user generated content
+public/profile.json
+public/blogs.json
