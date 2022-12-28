@@ -291,21 +291,21 @@ const achievementSection = {
           url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
         }
       ]
-    }
+    },
 
-    // {
-    //   title: "PWA Web App Developer",
-    //   subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-    //   image: require("./assets/images/pwaLogo.webp"),
-    //   imageAlt: "PWA Logo",
-    //   footerLink: [
-    //     {name: "Certification", url: ""},
-    //     {
-    //       name: "Final Project",
-    //       url: "https://pakistan-olx-1.firebaseapp.com/"
-    //     }
-    //   ]
-    // }
+    {
+      title: "PWA Web App Developer",
+      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
+      image: require("./assets/images/pwaLogo.webp"),
+      imageAlt: "PWA Logo",
+      footerLink: [
+        {name: "Certification", url: ""},
+        {
+          name: "Final Project",
+          url: "https://pakistan-olx-1.firebaseapp.com/"
+        }
+      ]
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -377,8 +377,8 @@ const contactInfo = {
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: false // Set true to display this section, defaults to false
+  userName: "JavaScriptDaily", //Replace "twitter" with your twitter username without @
+  display: true // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
