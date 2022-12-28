@@ -4,5 +4,3 @@ repos:
   hooks:
     - id: prettier
       files: ".*.(json|js|css)"
-
-
