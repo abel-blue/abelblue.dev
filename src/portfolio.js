@@ -127,7 +127,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Addis Ababa University",
-      logo: require("./assets/images/aau.png"),
+      logo: require("./assets/images/aau.jpg"),
       subHeader: "Bachelor of Science in Electrical & Computer Engineering",
       duration: "September 2016 - July 2021",
       desc: "Participated in the research and published a papers.",
@@ -176,7 +176,7 @@ const workExperiences = {
     {
       role: "Software Engineer",
       company: "Advanced Engineering",
-      companylogo: require("./assets/images/adv.jpg"),
+      companylogo: require("./assets/images/adv.png"),
       date: "June 2020 – March 2021",
       desc: "Full Stack Software Developer",
       descBullets: [
@@ -229,18 +229,18 @@ const bigProjects = {
         }
         //  you can add extra buttons here.
       ]
-    },
-    {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      // projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
     }
+    // {
+    //   image: require("./assets/images/nextuLogo.webp"),
+    //   projectName: "Nextu",
+    //   // projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "http://nextu.se/"
+    //     }
+    //   ]
+    // }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -318,7 +318,7 @@ const blogSection = {
       url: "https://medium.com/@Abel-Blue/refund-by-location-smart-contract-4fb4315ee1f",
       title: "Ether Smart Contract",
       description:
-        "Flutter D-App"
+        "location-bound smart contract using the flutter dapp."
     }
     // {
     //   url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
