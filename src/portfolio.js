@@ -127,7 +127,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Addis Ababa University",
-      logo: require("./assets/images/aau.jpg"),
+      logo: require("./assets/images/aau.png"),
       subHeader: "Bachelor of Science in Electrical & Computer Engineering",
       duration: "September 2016 - July 2021",
       desc: "Participated in the research and published a papers.",
@@ -161,8 +161,12 @@ const techStack = {
       progressPercentage: "70%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "65%"
+      Stack: "Python",
+      progressPercentage: "75%"
+    },
+    {
+      Stack: "SQL",
+      progressPercentage: "80%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
