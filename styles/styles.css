@@ -1,8 +1,47 @@
-body {
-  background-color: grey;
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1,
-p {
-  color: whitesmoke;
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 110%;
+  color: #ecf0f1;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Caveat", cursive;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
