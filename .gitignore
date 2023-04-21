@@ -13,6 +13,7 @@
 # misc
 .DS_Store
 .env
+draco/
 .env.local
 .env.development.local
 .env.test.local
@@ -25,3 +26,5 @@ yarn-error.log*
 #user generated content
 public/profile.json
 public/blogs.json
+.sass-cache
+config.codekit3
