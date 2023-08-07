@@ -18,6 +18,16 @@
 			/* Edit this with your name or anything else */
 			content: 'abelb';
 		}
+        .black-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
 	</style>
 </head>
 <body>
@@ -96,40 +106,68 @@
 			<h1>Projects</h1>
             <!-- <h1>Projects &amp;<br>Achievements</h1> -->
 			<ul class="award-list list-flat">
-				<li>April 2022</li>
-				<li><b>Speech data collection using kafka cluster</b></li>
-                <li>By combining messaging, storage, and stream processing, the data pipeline allow collection, storage and analysis of real-time audio datasets.</li>
-                <li><i>Used techstacks:</i> AWS S3 Bucket, aws athena, spark, kafka, ELT pipeline, Airflow, docker</li>
-				<li> <a href="https://github.com/abel-blue/StoTkas" target="_blank">Project GitHub Link</a></li>
-                <li> <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" target="_blank">Article</a></li>
+                <h2>Speech data collection using kafka cluster</h2>
+                <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*l2GF8mPOUfcVymEXquFzDw.png" alt="kafka cluster"></li>
+				<li><i>April 2022</i></li>
+                <li>
+                    The proposed data pipeline was built on Apache Kafka, an open-source distributed event streaming platform. 
+                    By combining messaging, storage, and stream processing, the data pipeline allow collection, storage and
+                    analysis of real-time audio datasets. The data pipeline consists of the following key components: 
+                    Data producers, Data consumers, Apache Kafka cluster, Amazon S3 bucket Connectors and Apache Spark Stream preprocessors.
+                </li>
+                <li><i>Used techstacks:</i> AWS S3 Bucket, AWS athena, spark, kafka, ELT pipeline, Airflow, docker</li>
+                <br>
+                <a href="https://github.com/abel-blue/StoTkas" class="black-button" target="_blank">GitHub Link</a>
+                <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" class="black-button" target="_blank">Article</a>
 			</ul>
+            <hr>
 			<ul class="award-list list-flat">
-				<li>June 2022</li>
-				<li><b>Data warehouse for pNEUMA | open-traffic datasets</b></li>
-				<li>Built a scalable data warehouse tech-stack with ELT pipeline composed of MYSQL Database, dbt transformation, Airflow orchestration and Redash visualization.</li>
+                <h2>Data warehouse for pNEUMA | open-traffic datasets</h2>
+                <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*QYNS1jXbWZBeq_vJ4QwZsA.png" alt="Description"></li>
+                <li><i>June 2022</i></li>
+				<li>Built a scalable data warehouse tech-stack with ELT pipeline composed of MYSQL Database, dbt transformation, 
+                    Airflow orchestration and Redash visualization.</li>
                 <li><i>Used techstacks:</i> dbt, ELT pipeline, Airflow, Redash. </li>
-                <li> <a href="https://github.com/abel-blue/data-warehouse-dbt" target="_blank">Project GitHub Link</a></li>
-                <li> <a href="https://medium.com/@abel-blue/data-warehouse-tech-stack-with-mysql-dbt-airflow-eb31ee15e570" target="_blank">Article</a></li>
+                <br>
+                <a href="https://github.com/abel-blue/data-warehouse-dbt" class="black-button" target="_blank">GitHub Link</a>
+                <a href="https://medium.com/@abel-blue/data-warehouse-tech-stack-with-mysql-dbt-airflow-eb31ee15e570" class="black-button" target="_blank">Article</a>
 			</ul>
+            <hr>
             <ul class="award-list list-flat">
-				<li>Sep 2022</li> 
-				<li><b>USGS LIDAR Data warehouse</b></li>
-                <li>Used LASzip, PDAL, and CloudCompare, USGS 3DEP API</li>
-                <li>Used GIS software packages such as QGIS or ArcGIS.</li>
-                <li> <a href="https://github.com/abel-blue/agritech-usgs-lidar" target="_blank">Project GitHub Link</a></li>
+                <h2><b>USGS LIDAR Data warehouse</b></h2>
+                <li><img src="https://ars.els-cdn.com/content/image/1-s2.0-S1618866722001807-gr6.jpg" alt="Description"></li>
+				<li><i>Sep 2022</i></li> 
+                <li>
+                    We are very interested in how water flows through a maize farm field. This knowledge will help us improve our 
+                    research on new agricultural products being tested on farms. How much maize a field produces is very 
+                    spatially variable. Even if the same farming practices, seeds and fertilizer are applied exactly the same 
+                    by machinery over a field, there can be a very large harvest at one corner and a low harvest at another corner. 
+                    We would like to be able to better understand which parts of the farm are likely to produce more or less maize, 
+                    so that if we try a new fertilizer on part of this farm, we have more confidence that any differences in the maize 
+                    harvest are due mostly to the new fertilizer changes, and not just random effects due to other environmental factors. 
+                    We are tasked to produce an easy to use, reliable and well designed python module that domain experts and data 
+                    scientists can use to fetch, visualise, and transform publicly available satellite and LIDAR data. In particular, 
+                    our code should interface with USGS 3DEP and fetch data using their API.
+                </li>
+                <li><i>Used techstacks:</i> LASzip, PDAL, CloudCompare, USGS 3DEP API and GIS software packages such as QGIS or ArcGIS.</li>
+                <br>
+                <a href="https://github.com/abel-blue/agritech-usgs-lidar" class="black-button" target="_blank">GitHub Link</a>
 			</ul>
-			<ul class="award-list list-flat">
-				<li>March 2022</li> 
-				<li><b>Speech Recognition</b></li>
-				<li>Built end-to-end speech recognition model that transcribes Amharic speech to text</li>
-                <li>Used ML frameworks like TensorFlow and PyTorch and NLP</li>
-                <li>Used techniques like Fourier transforms, short-time Fourier transforms, Mel-frequency cepstral coefficients (MFCCs).</li>
-                <li> <a href="https://github.com/Abel-Blue/Speech-to-Text" target="_blank">Project GitHub Link</a></li>
-                <li> <a href="https://medium.com/@abel-blue/amharic-speech-to-text-60c4331cbf10" target="_blank">Article</a></li>
+            <hr>
+			<ul class="award-list list-flat"> 
+				<h2><b>Speech Recognition</b></h2>
+                <li><img src="https://uploads-ssl.webflow.com/5f78e2718ee539597bb33346/61291d09589cce1283f2d6d8_Post%20Voice%20recognition%20and%20speech%20recognition.png" alt="Description"></li>
+                <li><i>March 2022</i></li>
+				<li>Built end-to-end speech recognition model that transcribes Amharic speech to text.</li>
+                <li><i>Used ML frameworks</i> like TensorFlow, PyTorch and NLP</li>
+                <li><i>Used techniques</i> like Fourier transforms, short-time Fourier transforms and Mel-frequency cepstral coefficients (MFCCs).</li>
+                <br>
+                <a href="https://github.com/Abel-Blue/Speech-to-Text" class="black-button" target="_blank">GitHub Link</a>
+                <a href="https://medium.com/@abel-blue/amharic-speech-to-text-60c4331cbf10" class="black-button" target="_blank">Article</a>
 			</ul>
+            <hr>
             <ul class="award-list list-flat">
-                <li> <a href="https://github.com/abel-blue/" target="_blank">More Projects</a></li>
-                <li> <a href="https://medium.com/@abel-blue" target="_blank">More Articles</a></li>
+                <li><a href="https://github.com/abel-blue/" target="_blank" class="black-button">More Projects</a> <a href="https://medium.com/@abel-blue" target="_blank" class="black-button">More Articles</a></li>
             </ul>
 		</div>
 	</div>
