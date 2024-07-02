@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>abelblue</title>
+    <title>abelmitiku</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="abel mitiku portfolio page">
@@ -14,10 +14,69 @@
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<style>
+        .containers {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        
+        .certifications {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .certification {
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .certification a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        
+        .certification img {
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        
+        .certification span {
+            display: block;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        
 		.intro h1:before {
 			/* Edit this with your name or anything else */
-			content: 'abelb';
+			 content: 'Data';
 		}
+        .text-center {
+            text-align: center;
+        }
+        /* Style for social links in the about section */
+
+        /* Style for social links in the footer */
+        #footer .social {
+            font-size: 0px; /* Normal size for icons */
+        }
+        .unit {
+            text-align: center; /* Align text to the right within the container */
+            padding-right: 20px; /* Add padding to the right */
+        }
+        .unit p {
+            margin-bottom: 10px; /* Add margin below the paragraph */
+        }
+        .unit p i {
+            margin-right: 10px; /* Add margin between 2024 and Abel Mitiku */
+        }
+        
         .black-button {
             background-color: black;
             color: white;
@@ -28,6 +87,29 @@
             display: inline-block;
             cursor: pointer;
         }
+        ul.social {
+            list-style-type: none; /* Remove bullets */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            display: flex; /* Use flexbox to arrange items horizontally */
+        }
+        
+        ul.social li {
+            margin-right: 15px; /* Add spacing between items */
+        }
+        
+        ul.social li:last-child {
+            margin-right: 0; /* Remove margin from the last item */
+        }
+        
+        ul.social li a {
+            text-decoration: none; /* Optional: Remove underline from links */
+            color: inherit; /* Optional: Keep icon color as it is */
+            font-size: 24px; /* Adjust the font size of the icons */
+        }
+        
+        
+        
 	</style>
 </head>
 <body>
@@ -35,9 +117,9 @@
 	<div class="main-nav">
 		<div class="container">
 			<header class="group top-nav">
-				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				<!-- <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
 				    <span class="logo">Abel</span>
-				</div>
+				</div> -->
 			    <nav id="navbar-1" class="navbar item-nav">
 				    <ul>
 				        <li class="active"><a href="#about">About</a></li>
@@ -45,7 +127,7 @@
 				        <li><a href="#experiences">Experiences</a></li>
 				        <li><a href="#achievements">Projects</a></li>
 				        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
 				    </ul>
 				</nav>
 			</header>
@@ -55,23 +137,36 @@
 	<!-- Introduction -->
 	<div class="intro section" id="about">
 		<div class="container">
-			<p>Hi, I’m Abel Mitiku</p>
+			<!-- <p>Hi, I’m Abel Mitiku</p> -->
 			<div class="units-row units-split wrap">
 				<div class="unit-20">
-					<img src="img/abel.png" alt="Avatar">
+					<!-- <img src="img/photo.jpeg" alt="Avatar" width="100" height="100"> -->
 				</div>
-				<div class="unit-80">
+				<!-- <div class="unit-80">
 					<h1>I am<br><span id="typed"></span></h1>
-				</div>
+				</div> -->
+                <h1>About</h1>
 				<p>
-					🚀 I'm a versatile Data Scientist, AI & Automation Engineer 🤖, Skilled in leveraging a diverse toolkit for data engineering,
-                     analysis, and visualization, I specialize in designing AI-powered automation solutions. With expertise in various Amazon 
-                     Web Services (AWS) tools such as DynamoDB, Athena, Glue, EC2, Redshift, and S3, I build robust data pipelines to seamlessly 
-                     handle substantial volumes of data for AI-driven applications. My focus on delivering data-driven solutions and creating 
-                     compelling visualizations allows me to derive valuable insights and support data-informed decision-making across diverse 
-                     industries. Passionate about developing AI and automation solutions that streamline processes and drive efficiency, I aim to 
-                     empower organizations with innovative solutions, enabling them to harness the full potential of their data assets.
+                    My name is Abel Mitiku, I'm a versatile Data Engineer specializing in AI and automation solutions. 
+                    With expertise in AWS tools like DynamoDB, EC2, Redshift, and S3, as well as big 
+                    data tools like Apache Kafka, Airflow, and Spark, I build robust data pipelines 
+                    for AI-driven applications. My focus on data engineering, analysis, and visualization 
+                    helps derive valuable insights and support data-informed decision-making. Passionate 
+                    about streamlining processes and driving efficiency, I empower organizations to harness 
+                    the full potential of their data assets.
 				</p>
+                <div class="unit-50" id="contacts">
+                    <div class="units-row">
+                        <ul class="social list-flat">
+                            <li><a href="https://www.linkedin.com/in/abel-mitiku-2b95bb215/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://github.com/abel-blue" target="_blank"><i class="fa fa-github"></i></a></li>
+                            <li><a href="https://x.com/abelsblue" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/abelmitiku.c/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://medium.com/@abel-blue" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="mailto:abelmgetnet@gmail.com" target="_blank"><i class="fa fa-send"></i></a></li>
+                        </ul>                        
+                    </div>
+                </div>                
 			</div>
 		</div>
 	</div>
@@ -158,15 +253,19 @@
                 <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*l2GF8mPOUfcVymEXquFzDw.png" alt="kafka cluster"></li>
 				<li><i>April 2022</i></li>
                 <li>
-                    The proposed data pipeline was built on Apache Kafka, an open-source distributed event streaming platform. 
-                    By combining messaging, storage, and stream processing, the data pipeline allow collection, storage and
-                    analysis of real-time audio datasets. The data pipeline consists of the following key components: 
-                    Data producers, Data consumers, Apache Kafka cluster, Amazon S3 bucket Connectors and Apache Spark Stream preprocessors.
+                    Our project centers on leveraging Apache Kafka, an open-source distributed event streaming platform, 
+                    to construct an advanced data pipeline. This pipeline integrates messaging, storage, and stream processing 
+                    capabilities, facilitating the collection, storage, and real-time analysis of audio datasets. Key components 
+                    include data producers and consumers, an Apache Kafka cluster, connectors for seamless integration with 
+                    Amazon S3 buckets, and an Apache Spark Stream preprocessor. This setup ensures efficient data flow from data 
+                    sources to storage, enabling robust analytics and insights generation from large-scale speech datasets. 
+                    By harnessing Kafka's scalability and real-time capabilities, we aim to enhance data processing efficiency 
+                    and enable rapid insights extraction in the domain of speech data analytics.
                 </li>
                 <li><b><i>Used techstacks:</i></b> AWS S3 Bucket, AWS athena, spark, kafka, ELT pipeline, Airflow, docker</li>
                 <br>
                 <a href="https://github.com/abel-blue/StoTkas" class="black-button" target="_blank">GitHub Link</a>
-                <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" class="black-button" target="_blank">Article</a>
+                <!-- <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" class="black-button" target="_blank">Article</a> -->
 			</ul>
             <hr>
 			<ul class="award-list list-flat">
@@ -174,12 +273,33 @@
                 <br>
                 <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*QYNS1jXbWZBeq_vJ4QwZsA.png" alt="Description"></li>
                 <li><i>June 2022</i></li>
-				<li>Built a scalable data warehouse tech-stack with ELT pipeline composed of MYSQL Database, dbt transformation, 
-                    Airflow orchestration and Redash visualization.</li>
+				<li>
+                    In June 2022, we undertook the development of a robust and scalable data warehouse solution 
+                    tailored for handling open-traffic datasets within the framework of pNEUMA. This initiative 
+                    involved the implementation of a comprehensive ELT (Extract, Load, Transform) pipeline leveraging 
+                    MYSQL Database as the foundational storage backend. The pipeline was augmented with dbt 
+                    (Data Build Tool) for advanced data transformations, ensuring data quality and consistency 
+                    across the warehouse.
+                    <br>
+                    Airflow, a powerful orchestration tool, was integrated to automate and schedule 
+                    workflows, managing the seamless execution of data ingestion, transformation, and 
+                    loading processes. This orchestration capability not only enhanced operational 
+                    efficiency but also facilitated the timely delivery of updated insights and 
+                    analytics-ready data to stakeholders.
+                    <br>
+                    Redash, a dynamic visualization platform, was deployed to provide intuitive and 
+                    interactive data visualizations and dashboards. This visualization layer empowered 
+                    users to explore and derive actionable insights from the aggregated and transformed 
+                    data housed within the warehouse.
+                    <br>
+                    Overall, our approach aimed to optimize data handling, ensure data reliability, 
+                    and empower data-driven decision-making within the domain of open-traffic datasets, 
+                    supporting pNEUMA's mission with robust analytics capabilities.
+                </li>
                 <li><b><i>Used techstacks:</i></b> dbt, ELT pipeline, Airflow, Redash. </li>
                 <br>
                 <a href="https://github.com/abel-blue/data-warehouse-dbt" class="black-button" target="_blank">GitHub Link</a>
-                <a href="https://medium.com/@abel-blue/data-warehouse-tech-stack-with-mysql-dbt-airflow-eb31ee15e570" class="black-button" target="_blank">Article</a>
+                <!-- <a href="https://medium.com/@abel-blue/data-warehouse-tech-stack-with-mysql-dbt-airflow-eb31ee15e570" class="black-button" target="_blank">Article</a> -->
 			</ul>
             <hr>
             <ul class="award-list list-flat">
@@ -188,16 +308,16 @@
                 <li><img src="https://ars.els-cdn.com/content/image/1-s2.0-S1618866722001807-gr6.jpg" alt="Description"></li>
 				<li><i>Sep 2022</i></li> 
                 <li>
-                    We are very interested in how water flows through a maize farm field. This knowledge will help us improve our 
-                    research on new agricultural products being tested on farms. How much maize a field produces is very 
-                    spatially variable. Even if the same farming practices, seeds and fertilizer are applied exactly the same 
-                    by machinery over a field, there can be a very large harvest at one corner and a low harvest at another corner. 
-                    We would like to be able to better understand which parts of the farm are likely to produce more or less maize, 
-                    so that if we try a new fertilizer on part of this farm, we have more confidence that any differences in the maize 
-                    harvest are due mostly to the new fertilizer changes, and not just random effects due to other environmental factors. 
-                    We are tasked to produce an easy to use, reliable and well designed python module that domain experts and data 
-                    scientists can use to fetch, visualise, and transform publicly available satellite and LIDAR data. In particular, 
-                    our code should interface with USGS 3DEP and fetch data using their API.
+                    Our focus was on understanding water flow dynamics within maize farm fields, crucial for 
+                    advancing research on new agricultural products. Maize yields vary significantly across 
+                    fields despite uniform farming practices, necessitating a deeper understanding of spatial 
+                    variability. To enhance research accuracy, we developed a user-friendly Python module. 
+                    This module empowers domain experts and data scientists to seamlessly access, visualize, 
+                    and transform satellite and LIDAR data. Specifically, it interfaces with the USGS 3DEP API 
+                    to fetch high-resolution elevation data, enabling precise analysis of field characteristics. 
+                    Our goal was to provide reliable insights into maize productivity variations, ensuring that 
+                    experimental changes like new fertilizers yield meaningful outcomes, free from random 
+                    environmental influences.
                 </li>
                 <li><b><i>Used techstacks:</i></b> LASzip, PDAL, CloudCompare, USGS 3DEP API and GIS software packages such as QGIS or ArcGIS.</li>
                 <br>
@@ -205,11 +325,18 @@
 			</ul>
             <hr>
 			<ul class="award-list list-flat"> 
-				<h2><b>Speech Recognition</b></h2>
+				<h2><b>Speech Recognition: Amharic and Swahili Languages</b></h2>
                 <br>
                 <li><img src="https://uploads-ssl.webflow.com/5f78e2718ee539597bb33346/61291d09589cce1283f2d6d8_Post%20Voice%20recognition%20and%20speech%20recognition.png" alt="Description"></li>
                 <li><i>March 2022</i></li>
-				<li>Built end-to-end speech recognition model that transcribes Amharic speech to text.</li>
+				<li>This project focuses on developing a robust speech recognition system capable of accurately converting 
+                    spoken Amharic and Swahili languages into text. The goal is to facilitate seamless communication 
+                    and interaction in regions where these languages are predominant, enhancing accessibility to 
+                    digital tools and services. Leveraging machine learning frameworks like TensorFlow and PyTorch, 
+                    the model integrates advanced signal processing techniques such as Fourier transforms, 
+                    short-time Fourier transforms, and Mel-frequency cepstral coefficients (MFCCs). These 
+                    methods are pivotal in capturing and analyzing speech patterns, ensuring high accuracy 
+                    in transcription and improving usability across diverse linguistic contexts.</li>
                 <li><i>Used ML frameworks</i> like TensorFlow, PyTorch and NLP</li>
                 <li><b><i>Used techniques</i></b> like Fourier transforms, short-time Fourier transforms and Mel-frequency cepstral coefficients (MFCCs).</li>
                 <br>
@@ -233,7 +360,7 @@
 			</ul>
             <ul class="skill-list list-flat">
 				<li>Machine Learning</li>
-				<li>TensorFlow / Scikit-learn / PyTorch / Keras / XGBoost / Deep Learning / LLM / Prompt Engineering / OpenAI</li>
+				<li>TensorFlow / Scikit-learn / PyTorch / Keras / XGBoost / Deep Learning / LLM / Prompt Engineering / OpenAI API</li>
 			</ul>
 			<ul class="skill-list list-flat">
 				<li>Programming Languages</li>
@@ -254,6 +381,117 @@
 		</div>
 	</div>
 
+    <div class="containers" id="certifications">
+        <h1>Certifications</h1>
+        <br><br>
+        <div class="certifications">
+            <div class="certification">
+                <a href="https://coursera.org/share/1b8e92af45e6fe0fb832fe541404543e" target="_blank">
+                    <img src="img/google.png" alt="Google Data Analytics Professional Certificate">
+                    <span><b>Google Data Analytics Professional Certificate</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://coursera.org/share/a6dda749d3fa103a453d749cb07ba03e" target="_blank">
+                    <img src="img/penastate.png" alt="AI Applications in Marketing and Finance">
+                    <span><b>AI Applications in Marketing and Finance</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://coursera.org/share/a1f5ee2bc049172e26e88da44de1cb04" target="_blank">
+                    <img src="img/meta.png" alt="Advanced MySQL Topics">
+                    <span><b>Advanced MySQL Topics</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/78SM3P9AJY4A?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/aws.png" alt="Data Analytics and Databases on AWS">
+                    <span><b>Data Analytics and Databases on AWS</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/47PNQFCD5W7Q?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/ibm.png" alt="Data Engineering Essentials">
+                    <span><b>Data Engineering Essentials</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/ZAU7FJ8HN3WE?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/ibm.png" alt="Data Warehouse Fundamentals">
+                    <span><b>Data Warehouse Fundamentals</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/H54ZEZANQ3JD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/google.png" alt="Google AI Essentials">
+                    <span><b>Google AI Essentials</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/N734QTSM5CG3?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=project" target="_blank">
+                    <img src="img/duke.png" alt="Website Data Extraction with Python">
+                    <span><b>Website Data Extraction with Python</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://drive.google.com/file/d/1sNwSDBbyofJoc4V1pMxWQwisboeUSVWK/view?usp=sharing" target="_blank">
+                    <img src="img/10academy.png" alt="Machine Learning & Data Engineering Training">
+                    <span><b>Machine Learning & Data Engineering Training</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/EWJMXND3WY4S?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/microsoft.png" alt="Natural Language Processing in Microsoft Azure">
+                    <span><b>Natural Language Processing in Microsoft Azure</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/XTVKMVKWAGVY?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/ibm.png" alt="Machine Learning Essentials">
+                    <span><b>Machine Learning Essentials</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/verify/DDLL2ABQ282P?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+                    <img src="img/google_cloud.png" alt="Generative AI Essentials">
+                    <span><b>Generative AI Essentials</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://www.coursera.org/account/accomplishments/specialization/UHA4WERNEP6N?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof" target="_blank">
+                    <img src="img/google.png" alt="Google Business Intelligence Professional Certificate">
+                    <span><b>Google Business Intelligence Professional Certificate</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <div class="certification">
+                <a href="https://drive.google.com/file/d/1HZK4k3PVghlg3bLYayhv0A7Q-PbhwfsZ/view?usp=sharing" target="_blank">
+                    <img src="img/youthintconclave.jpeg" alt="YIC Leadership and Entrepreneurship Summit Delegate">
+                    <span><b>YIC Leadership and Entrepreneurship Summit Delegate</b></span>
+                    <p><i>View certification link</i></p>
+                </a>
+            </div>
+            <!-- Add more certifications as needed -->
+
+
+
+        </div>
+    </div>
+    
+    
+
 	<!-- Quote -->
 	<div class="quote">
 		<div class="container text-centered">
@@ -262,21 +500,21 @@
 	</div>
 
 	<footer>
-		<div class="container">
+		<div class="containers">
 			<div class="units-row">
-			    <div class="unit-50">
-			    	<p>Handcrafted</p>
+			    <div class="unit">
+			    	<p>© <i>2024</i> <span><b>Abel Mitiku ∙ Data Engineer</b></span></p>
 			    </div>
-			    <div class="unit-50" id="contacts">
-					<ul class="social list-flat right">
+			    <!-- <div class="unit-50" id="footer">
+                    <ul class="social list-flat">
                         <li><a href="mailto:abelmgetnet@gmail.com" target="_blank"><i class="fa fa-send"></i></a></li>
                         <li><a href="https://github.com/abel-blue" target="_blank"><i class="fa fa-github"></i></a></li>
                         <li><a href="https://www.linkedin.com/in/abel-mitiku-2b95bb215/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="https://x.com/abelsblue" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://x.com/abelsblue" target="_blank"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="https://www.instagram.com/abelmitiku.c/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="https://medium.com/@abel-blue" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-					</ul>
-			    </div>
+                    </ul>
+                </div>                 -->
 			</div>
 		</div>
 	</footer>
@@ -286,11 +524,11 @@
 	<script src="js/typed.min.js"></script>
     <script src="js/kube.min.js"></script>
     <script src="js/site.js"></script>
-    <script>
+    <!-- <script>
 		function newTyped(){}$(function(){$("#typed").typed({
 		// Change to edit type effect
 		strings: ["a Data Scientist", "an AI specialist"],
 		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
-    </script>
+    </script> -->
 </body>
 </html>
