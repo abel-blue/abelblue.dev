@@ -35,8 +35,19 @@
         
         .certification a {
             text-decoration: none;
-            color: #333;
+            color: #333 !important;
             display: block;
+            transition: color 0.3s ease !important; /* Smooth color transition */
+        }
+        
+        .certification a:hover {
+            color: #0078f8 !important; /* Blue on hover */
+        }
+
+        /* Optional: ensure child elements inherit the color */
+        .certification a span,
+        .certification a p {
+            color: inherit;
         }
         
         .certification img {
@@ -51,7 +62,17 @@
             font-size: 16px;
             margin-top: 5px;
         }
-        
+
+        .main-nav .navbar ul li a {
+            color: rgba(0, 0, 0, 0.8) !important; /* Normal color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth hover transition */
+        }
+
+        .main-nav .navbar ul li a:hover {
+            color: #007bff !important; /* Blue on hover */
+        }
+
 		.intro h1:before {
 			/* Edit this with your name or anything else */
 			 content: 'Data';
@@ -59,6 +80,7 @@
         .text-center {
             text-align: center;
         }
+
         /* Style for social links in the about section */
 
         /* Style for social links in the footer */
@@ -88,9 +110,11 @@
         }
         ul.social {
             list-style-type: none; /* Remove bullets */
-            padding: 0; /* Remove padding */
+            padding: 10px 20px;
             margin: 0; /* Remove margin */
             display: flex; /* Use flexbox to arrange items horizontally */
+            justify-content: center; /* Center items horizontally */
+            /* gap: 20px; Space between each icon */
         }
         
         ul.social li {
@@ -102,10 +126,197 @@
         }
         
         ul.social li a {
-            text-decoration: none; /* Optional: Remove underline from links */
-            color: inherit; /* Optional: Keep icon color as it is */
-            font-size: 24px; /* Adjust the font size of the icons */
+            font-size: 32px; /* Increases icons size collectively */
+            color: rgba(0, 0, 0, 0.716) !important; /* Keep black */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
         }
+
+        /* Upwork text */
+        ul.social li a.upwork {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center; /* Aligns text vertically center with other icons */
+            justify-content: center;
+            vertical-align: middle; /* fallback for inline alignment */
+        }
+
+        ul.social li a.upwork {
+            margin-top: -10px; /* move it slightly up */
+        }
+
+        /* Medium SVG scaling */
+        ul.social li a.medium svg {
+            width: 80px; /* Increase width */
+            height: 60; /* Increase height */
+        }
+
+        /* Optional: Hover effect for all */
+        ul.social li a:hover {
+            color: #007bff !important; /* Blue on hover */
+        }
+
+        ul.social li a.medium svg circle {
+            fill: rgba(0, 0, 0, 0.716); /* Default black */
+            transition: fill 0.3s ease;
+        }
+
+        /* Hover for Medium SVG circles */
+        ul.social li a.medium:hover svg circle {
+            fill: #007bff !important; /* Change to blue on hover */
+        }
+
+        .social-link {
+            position: relative;
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            width: max-content;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            position: absolute;
+            top: 130%; /* Position below the icon */
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 12px;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .social-link:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .scrollable-images {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px 0;
+}
+
+.image-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  width: 100%;
+}
+
+.image-wrapper img {
+  flex: 0 0 auto;
+  width: 800px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.prev,
+button.next {
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+button.prev:hover,
+button.next:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 5px;
+}
+
+#lightbox .prev, #lightbox .next {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.7);
+  color:white;
+  font-size: 36px;
+  padding:10px;
+  cursor:pointer;
+  border:none;
+  border-radius:5px;
+}
+
+#lightbox .prev { left: 20px; }
+#lightbox .next { right: 20px; }
+
+#lightbox .close {
+  position:absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color:white;
+  cursor:pointer;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.image-container:hover .zoom-icon {
+  opacity: 1; /* Show only when hovering */
+}
+
 	</style>
 </head>
 <body>
@@ -118,7 +329,7 @@
 				</div> -->
 			    <nav id="navbar-1" class="navbar item-nav">
 				    <ul>
-				        <li class="active"><a href="#about">About</a></li>
+				        <li><a href="#about">About</a></li>
                         <li><a href="https://www.canva.com/design/DAGHK-oVJSE/PN6haAZ5yS7UVoSdY2QK5A/edit?utm_content=DAGHK-oVJSE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Resume</a></li>
 				        <li><a href="#experiences">Experiences</a></li>
 				        <li><a href="#achievements">Projects</a></li>
@@ -143,22 +354,71 @@
 				</div> -->
                 <h1>About</h1>
 				<p>
-                    My name is Abel Mitiku, I’m a versatile Software Engineer/Data Scientist specializing in AI-driven automation 
-                    and intelligent systems. With expertise in deep learning, NLP, and model optimization, 
-                    I design and deploy scalable ML pipelines that power predictive analytics and real-time decision-making. 
-                    My work focuses on developing LLM-powered applications, fine-tuning models for performance, and implementing 
-                    end-to-end MLOps workflows. Passionate about solving complex challenges, I drive innovation by transforming 
-                    raw data into actionable AI solutions.
+                    <p>
+                        My name is Abel Mitiku, a versatile <strong>Senior Software Engineer</strong> and 
+                        <strong>AI Engineer</strong> with strong <strong>full-stack development</strong> 
+                        experience. I specialize in designing and building 
+                        <strong>scalable backend systems</strong>, <strong>AI-driven applications</strong>, 
+                        and intelligent automation solutions. With expertise in 
+                        <strong>deep learning</strong>, <strong>NLP</strong>, 
+                        <strong>large language models</strong>, <strong>data engineering</strong>, and 
+                        <strong>data analytics</strong>, I create 
+                        <strong>end-to-end ML and data engineering pipelines</strong> that transform raw 
+                        data into actionable insights and integrate seamlessly with production environments. 
+                        I also focus on <strong>full-stack development</strong>, 
+                        <strong>cloud-native deployment</strong>, and <strong>MLOps practices</strong> 
+                        to ensure reliability and performance at scale.
+                    </p>
+                        <!-- Passionate about innovation, 
+                        I deliver robust, <strong>data-driven software solutions</strong> that make real 
+                        impact.</p> -->
 				</p>
                 <div class="unit-50" id="contacts">
                     <div class="units-row">
+                        <br><br>
+                        <h2>Connect Online</h2>
+                        <br> <!-- adds a line space -->
                         <ul class="social list-flat">
-                            <li><a href="https://www.linkedin.com/in/abel-m-2b95bb215/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="https://github.com/abel-blue" target="_blank"><i class="fa fa-github"></i></a></li>
-                            <!-- <li><a href="https://x.com/abelsblue" target="_blank"><i class="fa fa-twitter"></i></a></li> -->
-                            <li><a href="https://www.instagram.com/x.patche/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://medium.com/@abel-blue" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="mailto:abelmgetnet@gmail.com" target="_blank"><i class="fa fa-send"></i></a></li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/abel-m-2b95bb215/" target="_blank" class="social-link">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span class="tooltip">LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/abel-blue" target="_blank" class="social-link">
+                                    <i class="fa fa-github"></i>
+                                    <span class="tooltip">GitHub</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.upwork.com/freelancers/~015411879a03057969?mp_source=share" target="_blank" class="upwork social-link">
+                                    U<span style="font-style:italic;">p</span>
+                                    <span class="tooltip">Upwork</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/x.patche/" target="_blank" class="social-link">
+                                    <i class="fa fa-instagram"></i>
+                                    <span class="tooltip">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:abelmgetnet@gmail.com" target="_blank" class="social-link">
+                                    <i class="fa fa-envelope"></i>
+                                    <span class="tooltip">Email</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://medium.com/@abel-blue" target="_blank" style="display:flex; align-items:center;" class="medium social-link">
+                                    <svg width="55" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="20" cy="20" r="16"/>
+                                        <circle cx="50" cy="20" r="12"/>
+                                        <circle cx="75" cy="20" r="8"/>
+                                    </svg>
+                                    <span class="tooltip">Medium</span>
+                                </a>
+                            </li>
                         </ul>                        
                     </div>
                 </div>                
@@ -178,7 +438,7 @@
 			</ul>
 			<ul class="work-list">
 				<li>Aug 2023 - Jul 2024</li>
-				<li><a href="https://www.10academy.org/" target="_blank">10 Academy</a></li>
+				<li><a href="https://10academy.org/" target="_blank">10 Academy</a></li>
 				<li>Senior Systems Engineer</li>
 				<li><i>Santa Clara, California · Remote</i></li>
 			</ul>
@@ -195,7 +455,7 @@
                 <li><i>Santa Clara, California · Remote</i></li>
 			</ul>
             <ul class="work-list">
-				<li>Feb 2022 - Feb 2023</li>
+				<li>Feb 2022 - Mar 2023</li>
 				<li><a href="https://www.theguild.ai/" target="_blank">AI Guild</a></li>
 				<li>Machine Learning Engineer</li>
                 <li><i>Berlin, Germany · Remote</i></li>
@@ -214,140 +474,303 @@
 		<div class="container">
 			<h1>Projects</h1>
             <ul class="award-list list-flat">
-                <h2>Context-Aware Chatbot with Role-Based Access</h2>
+                <h2>AI Chatbot for Conversational Database Access</h2>
                 <br>
-                <li><img src="https://masterofcode.com/wp-content/uploads/2022/06/bot-example-4.png" alt="chatbot"></li>
-				<li><i>April 2022</i></li>
                 <li>
-                    I am the creator of a context-aware and role-based access chatbot, a cutting-edge Retrieval Augmented Generation chatbot meticulously engineered to elevate user interactions by delivering succinct and accurate responses tailored to the provided context. The chatbot adheres to a robust set of guiding principles, ensuring optimal performance and user satisfaction:
-                    <br>
-					<b>Contextual Precision:</b> The chatbot relies exclusively on the contextual cues at hand to craft responses, guaranteeing relevance and precision.
-                    <br>
-					<b>Acknowledging Gaps:</b> In cases where the context is insufficient, The chatbot transparently acknowledges its limitations, fostering trust and openness in interactions.
-                    <br>
-					<b>Code Clarity:</b> When presenting code examples, The chatbot employs triple backticks for proper formatting, specifying the programming language to enhance clarity and understanding.
-                    <br>
-					<b>Focused Information:</b> The chatbot avoids generating pseudo-code or unrelated information, maintaining consistency by delivering content that is consistently on point.
-                    <br>
-					<b>Conciseness:</b> Prioritizing brevity and clarity, The chatbot encapsulates responses within 600 characters or less, ensuring efficient and effective information delivery.
-                    <br>
-                    Beyond these core features, The chatbot is designed with advanced capabilities:
-                    <br>
-					<b>Role-Based Access Control:</b> The chatbot is aware of the user's role, distinguishing between trainees and administrators. Trainees can access public data/information, such as details on 10 academy. Administrators, on the other hand, have privileged access to confidential or private information, ensuring the right level of data security.
-                    <br>
-					<b>Conversation Chain Retention:</b> The chatbot possesses the unique ability to retain and comprehend past conversation chains. This feature enables a seamless and coherent flow of interactions, making each conversation feel like a continuation rather than a series of disjointed queries.
-                    <br>
-					<b>Feedback-Driven Learning:</b> The chatbot is continuously evolving through user feedback. Each interaction serves as an opportunity for learning and adjustment, allowing the chatbot to adapt and enhance its responses over time. This iterative learning process ensures a personalized and improving conversational experience for users.
-                    <br>
-                    The chatbot represents a leap forward in chatbot technology, combining contextual awareness, role-based access control, and conversation chain retention to provide users with an unparalleled and tailored conversational experience.
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            <img src="assets/genie_chatbot/web_intro_page.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/web_chat_page.png" alt="AI Chatbot Database 1" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/web_config_page.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/genie_splash.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/mobile_login_page.jpeg" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/mobile_home_page.jpeg" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/mobile_chat_page.jpeg" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/dark_mode.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/genie_chatbot/dashboard_chat_page.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <span 
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
                 </li>
-                <li><b><i>Used techstacks:</i></b> Chatbot, Prompt Engineering, Python, Vector Database, LLM Prompt, AI Bot, AI Chatbot, Generative AI, Machine learning</li>
+                <li><i><strong>Date:</strong> Jun 15, 2025</i></li>
+                <li><strong>Role:</strong> Lead ML Engineer & Full-Stack Developer</li>
                 <br>
-                <!-- <a href="https://github.com/abel-blue/StoTkas" class="black-button" target="_blank">GitHub Link</a>
-                <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" class="black-button" target="_blank">Article</a> -->
-			</ul>
-            <hr>
-
-			<ul class="award-list list-flat">
-                <h2>Speech data collection using kafka cluster</h2>
-                <br>
-                <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*l2GF8mPOUfcVymEXquFzDw.png" alt="kafka cluster"></li>
-				<li><i>April 2022</i></li>
                 <li>
-                    Our project centers on leveraging Apache Kafka, an open-source distributed event streaming platform, 
-                    to construct an advanced data pipeline. This pipeline integrates messaging, storage, and stream processing 
-                    capabilities, facilitating the collection, storage, and real-time analysis of audio datasets. Key components 
-                    include data producers and consumers, an Apache Kafka cluster, connectors for seamless integration with 
-                    Amazon S3 buckets, and an Apache Spark Stream preprocessor. This setup ensures efficient data flow from data 
-                    sources to storage, enabling robust analytics and insights generation from large-scale speech datasets. 
-                    By harnessing Kafka's scalability and real-time capabilities, we aim to enhance data processing efficiency 
-                    and enable rapid insights extraction in the domain of speech data analytics.
+                    Designed and developed Genie, an AI-powered chatbot that allows users to connect directly to relational databases and query their data using natural language. Built a complete SaaS platform with a responsive web application as well as iOS and Android apps, providing a seamless user experience across devices.
+                    The system enables users to register their database credentials, configure environments, and interact with data conversationally through Genie’s chat interface. Features include feedback reactions, regenerate options, and secure multi-user support.
+                    By integrating FastAPI as the backend, a vector database for semantic understanding, and a modern React + TypeScript frontend, Genie ensures fast, reliable, and intuitive database interaction. The mobile applications were developed using Flutter, supporting theme customization and responsive layouts.
                 </li>
-                <li><b><i>Used techstacks:</i></b> AWS S3 Bucket, AWS athena, spark, kafka, ELT pipeline, Airflow, docker</li>
                 <br>
-                <a href="https://github.com/abel-blue/StoTkas" class="black-button" target="_blank">GitHub Link</a>
-                <!-- <a href="https://medium.com/@abel-blue/data-engineering-speech-to-text-data-collection-with-kafka-airflow-and-spark-add6ab89abeb" class="black-button" target="_blank">Article</a> -->
-			</ul>
-            <hr>
-			<ul class="award-list list-flat">
-                <h2>Data warehouse for pNEUMA | open-traffic datasets</h2>
+                <li><b><i>Skills & Tech:</i></b> FastAPI, React, TypeScript, Vector Database, Flutter (iOS & Android), SaaS Development</li>
                 <br>
-                <li><img src="https://miro.medium.com/v2/resize:fit:1400/1*QYNS1jXbWZBeq_vJ4QwZsA.png" alt="Description"></li>
-                <li><i>June 2022</i></li>
-				<li>
-                    In June 2022, we undertook the development of a robust and scalable data warehouse solution 
-                    tailored for handling open-traffic datasets within the framework of pNEUMA. This initiative 
-                    involved the implementation of a comprehensive ELT (Extract, Load, Transform) pipeline leveraging 
-                    MYSQL Database as the foundational storage backend. The pipeline was augmented with dbt 
-                    (Data Build Tool) for advanced data transformations, ensuring data quality and consistency 
-                    across the warehouse.
-                    <br>
-                    Airflow, a powerful orchestration tool, was integrated to automate and schedule 
-                    workflows, managing the seamless execution of data ingestion, transformation, and 
-                    loading processes. This orchestration capability not only enhanced operational 
-                    efficiency but also facilitated the timely delivery of updated insights and 
-                    analytics-ready data to stakeholders.
-                    <br>
-                    Redash, a dynamic visualization platform, was deployed to provide intuitive and 
-                    interactive data visualizations and dashboards. This visualization layer empowered 
-                    users to explore and derive actionable insights from the aggregated and transformed 
-                    data housed within the warehouse.
-                    <br>
-                    Overall, our approach aimed to optimize data handling, ensure data reliability, 
-                    and empower data-driven decision-making within the domain of open-traffic datasets, 
-                    supporting pNEUMA's mission with robust analytics capabilities.
-                </li>
-                <li><b><i>Used techstacks:</i></b> dbt, ELT pipeline, Airflow, Redash. </li>
-                <br>
-                <a href="https://github.com/abel-blue/data-warehouse-dbt" class="black-button" target="_blank">GitHub Link</a>
-                <!-- <a href="https://medium.com/@abel-blue/data-warehouse-tech-stack-with-mysql-dbt-airflow-eb31ee15e570" class="black-button" target="_blank">Article</a> -->
-			</ul>
-            <hr>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
             <ul class="award-list list-flat">
-                <h2><b>USGS LIDAR Data warehouse</b></h2>
+                <h2>AI-Powered Daycare Center Simulator Tool</h2>
                 <br>
-                <li><img src="https://ars.els-cdn.com/content/image/1-s2.0-S1618866722001807-gr6.jpg" alt="Description"></li>
-				<li><i>Sep 2022</i></li> 
                 <li>
-                    Our focus was on understanding water flow dynamics within maize farm fields, crucial for 
-                    advancing research on new agricultural products. Maize yields vary significantly across 
-                    fields despite uniform farming practices, necessitating a deeper understanding of spatial 
-                    variability. To enhance research accuracy, we developed a user-friendly Python module. 
-                    This module empowers domain experts and data scientists to seamlessly access, visualize, 
-                    and transform satellite and LIDAR data. Specifically, it interfaces with the USGS 3DEP API 
-                    to fetch high-resolution elevation data, enabling precise analysis of field characteristics. 
-                    Our goal was to provide reliable insights into maize productivity variations, ensuring that 
-                    experimental changes like new fertilizers yield meaningful outcomes, free from random 
-                    environmental influences.
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            <img src="assets/day_care_simulator/login_page.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/welcomscreen.png" alt="AI Chatbot Database 1" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/input_page_one.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/input_page_two.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/insight_1.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/insight_2.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/action_plan_1.png" alt="AI Chatbot Database 1" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/action_plan_2.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/dashboard_1.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/dashboard_2.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/dashboard_3.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <img src="assets/day_care_simulator/export_results.png" alt="AI Chatbot Database 3" onclick="openLightbox(this)">
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
                 </li>
-                <li><b><i>Used techstacks:</i></b> LASzip, PDAL, CloudCompare, USGS 3DEP API and GIS software packages such as QGIS or ArcGIS.</li>
+                <li><i><strong>Date:</strong> Aug 15, 2025</i></li>
+                <li><strong>Role:</strong> Full-Stack Developer & AI Engineer</li>
                 <br>
-                <a href="https://github.com/abel-blue/agritech-usgs-lidar" class="black-button" target="_blank">GitHub Link</a>
-			</ul>
-            <hr>
-			<ul class="award-list list-flat"> 
-				<h2><b>Speech Recognition: Amharic and Swahili Languages</b></h2>
+                <li>
+                    Built an AI-driven dashboard tool for daycare centers, enabling staff to input budgets, classroom data, and resource details. The system leverages machine learning to analyze inputs and generate recommendations for optimized resource allocation, staffing, and classroom management, helping administrators improve operational efficiency, planning accuracy, and cost management.
+                    The platform includes an intuitive web dashboard, automated reports, and simulation features that let centers model different budget and staffing scenarios before making decisions.
+                </li>
                 <br>
-                <li><img src="https://uploads-ssl.webflow.com/5f78e2718ee539597bb33346/61291d09589cce1283f2d6d8_Post%20Voice%20recognition%20and%20speech%20recognition.png" alt="Description"></li>
-                <li><i>March 2022</i></li>
-				<li>This project focuses on developing a robust speech recognition system capable of accurately converting 
-                    spoken Amharic and Swahili languages into text. The goal is to facilitate seamless communication 
-                    and interaction in regions where these languages are predominant, enhancing accessibility to 
-                    digital tools and services. Leveraging machine learning frameworks like TensorFlow and PyTorch, 
-                    the model integrates advanced signal processing techniques such as Fourier transforms, 
-                    short-time Fourier transforms, and Mel-frequency cepstral coefficients (MFCCs). These 
-                    methods are pivotal in capturing and analyzing speech patterns, ensuring high accuracy 
-                    in transcription and improving usability across diverse linguistic contexts.</li>
-                <li><i>Used ML frameworks</i> like TensorFlow, PyTorch and NLP</li>
-                <li><b><i>Used techniques</i></b> like Fourier transforms, short-time Fourier transforms and Mel-frequency cepstral coefficients (MFCCs).</li>
+                <li><b><i>Skills & Tech:</i></b> OpenAI API, Python, React, FastAPI, Data Analytics, Simulation Tool</li>
                 <br>
-                <a href="https://github.com/Abel-Blue/Speech-to-Text" class="black-button" target="_blank">GitHub Link</a>
-                <a href="https://medium.com/@abel-blue/amharic-speech-to-text-60c4331cbf10" class="black-button" target="_blank">Article</a>
-			</ul>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
+            <ul class="award-list list-flat">
+                <h2>Speech Data Pipeline | Kafka Cluster</h2>
+                <br>
+                <li>
+                    <div class="scrollable-images">
+                        <!-- <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button> -->
+                        <div class="image-wrapper">
+                            <img src="https://miro.medium.com/v2/resize:fit:1400/1*l2GF8mPOUfcVymEXquFzDw.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <!-- <button class="next" onclick="scrollImages(this, 1)">&#10095;</button> -->
+                    </div>
+                </li>
+                <li><i><strong>Date:</strong> April 23, 2022</i></li>
+                <li><strong>Role:</strong> Data Engineer</li>
+                <br>
+                <li>
+                    Engineered a real-time speech data pipeline leveraging a distributed Kafka cluster. 
+                    Designed producers and consumers to handle large-scale audio streams with low latency, 
+                    ensuring fault tolerance and scalability. Implemented data ingestion, processing, and 
+                    storage layers, enabling downstream analytics and model training.
+                </li>
+                <br>
+                <li><b><i>Skills & Tech:</i></b> Kafka, Spark, Airflow, AWS S3, Athena, ELT Pipelines, Apache Kafka, Streaming Pipelines, Distributed Systems, Real-Time Processing</li>
+                <br>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
+
+            <ul class="award-list list-flat">
+                <h2>Data Warehouse for pNEUMA | Open-Traffic Datasets</h2>
+                <br>
+                <li>
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            <img src="https://pbs.twimg.com/media/EuJBIw3XEAAjpgN?format=jpg&name=4096x4096" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://miro.medium.com/v2/resize:fit:1400/1*QYNS1jXbWZBeq_vJ4QwZsA.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://owlcation.com/.image/w_3840,q_auto:good,c_limit/MTkxMTQ1MTA3MzQ3NzQ0NDEx/traffic-data-pipeline-and-warehouse.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://open-traffic.epfl.ch/wp-content/uploads/2020/09/map_none.jpg" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
+                </li>
+                <li><i><strong>Date:</strong> April 5, 2022</i></li>
+                <li><strong>Role:</strong> Data Engineer</li>
+                <br>
+                <li>
+                    Designed and implemented a scalable data warehouse for open-traffic datasets within the 
+                    pNEUMA framework. Built ELT pipelines using MySQL and dbt for transformations, 
+                    ensuring high data quality and consistency. Integrated Apache Airflow to orchestrate 
+                    ingestion and processing workflows, enabling seamless automation. Delivered interactive 
+                    dashboards in Redash, improving data accessibility and operational efficiency for real-time 
+                    traffic analysis.
+                </li>
+                <br>
+                <li><b><i>Skills & Tech:</i></b> Kafka, Spark, Airflow, AWS S3, Athena, ELT Pipelines, dbt, MySQL, Redash, Data Visualization</li>
+                <br>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
+            <ul class="award-list list-flat">
+                <h2>USGS LIDAR Data Warehouse | Agriculture Analytics</h2>
+                <br>
+                <li>
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            
+                            <img src="assets/lidar/image_1.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/lidar/image_2.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/lidar/image_3.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://camo.githubusercontent.com/1c7ece0dec15ef1eb4ebe8684e9e6d45e6638a619b482e982a86cb8b3c07a15d/68747470733a2f2f7777772e67656f6772617068797265616c6d2e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30322f6a6f686e736f6e735f726565665f6c696461722e706e67" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1618866722001807-gr6.jpg" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="https://vajiramandravi.com/current-affairs/wp-content/uploads/2025/04/what_is_lidar.webp" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <!-- <img src="https://www.researchgate.net/publication/387276081/figure/fig1/AS:11431281299354485@1734761236520/General-view-of-the-dashboard-1-Settings-panel-2-Range-corrected-lidar-signal.ppm" alt="AI Chatbot Database 2" onclick="openLightbox(this)"> -->
+                            
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
+                </li>
+                <li><i><strong>Date:</strong> Sep 12, 2022</i></li>
+                <li><strong>Role:</strong> Data Engineer</li>
+                <br>
+                <li>
+                    Built a Python module to access, process, and visualize USGS LIDAR and satellite 
+                    datasets for maize field studies. Enhanced analysis workflows to support research 
+                    on crop productivity, fertilizer optimization, and spatial variability. Delivered 
+                    geospatial insights through automated pipelines and visualization tools.
+                </li>
+                <br>
+                <li><b><i>Skills & Tech:</i></b> Python, PDAL, LASzip, CloudCompare, QGIS, ArcGIS, USGS 3DEP API</li>
+                <br>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
+
+            <ul class="award-list list-flat">
+                <h2>Speech Recognition System | Amharic & Swahili</h2>
+                <br>
+                <li>
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            <img src="assets/speech_to_text/logo.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/front_page.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/arc.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/record_audio.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/upload_audio.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/pitched.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/rnn.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/speech_to_text/trans.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
+                </li>
+                <li><i><strong>Date:</strong> Mar 22, 2022</i></li>
+                <li><strong>Role:</strong> Machine Learning Engineer</li>
+                <br>
+                <li>
+                    Developed a speech recognition system that converts Amharic and Swahili speech into text. 
+                    Designed to improve accessibility and digital communication in regions where these 
+                    languages are widely spoken. Implemented advanced signal processing techniques such 
+                    as Fourier transforms and Mel-Frequency Cepstral Coefficients (MFCCs) to capture and 
+                    analyze speech patterns. Leveraged TensorFlow and PyTorch for model training and 
+                    optimization, achieving high transcription accuracy across diverse audio inputs.
+                </li>
+                <br>
+                <li><b><i>Skills & Tech:</i></b> TensorFlow, PyTorch, NLP, Signal Processing, MFCCs</li>
+                <br>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
+
+            <ul class="award-list list-flat">
+                <h2>Social Media & Data Analytics Pipeline</h2>
+                <br>
+                <li>
+                    <div class="scrollable-images">
+                        <button class="prev" onclick="scrollImages(this, -1)">&#10094;</button>
+                        <div class="image-wrapper">
+                            <img src="assets/analysis/youtube_1.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/analysis/youtube_2.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/analysis/youtube_3.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/analysis/youtube_4.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/analysis/broadcast.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <img src="assets/analysis/twitter.png" alt="AI Chatbot Database 2" onclick="openLightbox(this)">
+                            <span
+                                style="position: absolute; top: 8px; right: 8px; 
+                                    background: rgba(134, 134, 134, 0.6); color: #ffffff; 
+                                    padding: 4px 6px; border-radius: 60%; 
+                                    cursor: pointer; font-size: 30px;"
+                                onclick="openLightbox(this.parentNode.querySelector('img'))">
+                                <i class="fa fa-search-plus"></i>
+                            </span>
+                        </div>
+                        <button class="next" onclick="scrollImages(this, 1)">&#10095;</button>
+                    </div>
+                </li>
+                <li><i><strong>Date:</strong> Mar 22, 2022</i></li>
+                <li><strong>Role:</strong> Data Analyst</li>
+                <br>
+                <li>
+                    Built a scalable data analytics pipeline to collect, process, and analyze social 
+                    media data from platforms like YouTube, Twitter, and Facebook. Designed automated ETL 
+                    workflows using AWS Glue, Lambda, and EMR to consolidate large datasets for sentiment 
+                    analysis, trend forecasting, and audience behavior tracking. Applied AI-driven analytics 
+                    to uncover patterns in customer engagement and market dynamics, enabling data-informed 
+                    decision-making across business units. The pipeline improved data accessibility and 
+                    reporting efficiency, resulting in a 10% increase in customer engagement.
+                </li>
+                <br>
+                <li><b><i>Skills & Tech:</i></b> AWS Glue, Lambda, EMR, Snowflake, Redash, Python, ETL, Data Analytics, Machine Learning</li>
+                <br>
+                <!-- <a href="#" class="black-button" target="_blank">GitHub Link</a> -->
+            </ul>
             <hr>
             <ul class="award-list list-flat">
                 <li><a href="https://github.com/abel-blue/" target="_blank" class="black-button">More Projects</a> <a href="https://medium.com/@abel-blue" target="_blank" class="black-button">More Articles</a></li>
             </ul>
+            <!-- Only one lightbox for the whole page -->
+            <div id="lightbox" onclick="closeLightbox(event)">
+                <span class="close" onclick="closeLightbox(event)">&times;</span>
+                <button class="prev" onclick="changeLightboxImage(-1)">&#10094;</button>
+                <img id="lightbox-img" src="">
+                <button class="next" onclick="changeLightboxImage(1)">&#10095;</button>
+            </div>
 		</div>
 	</div>
 
@@ -357,34 +780,39 @@
 			<h1>Technical<br>Skills</h1>
 			<ul class="skill-list list-flat">
 				<li>Data Engineering</li>
-				<li>ETL / OLAP / Dimensional Modeling / Apache Spark / Apache Airflow / Apache Kafka / Kedro / Docker / Kubernetes</li>
+				<li>ETL · OLAP · Dimensional Modeling · Apache Spark · Apache Airflow · Apache Kafka · Kedro · Docker · Kubernetes · Data Pipelines · ELT</li>
 			</ul>
             <ul class="skill-list list-flat">
-				<li>Machine Learning</li>
-				<li>TensorFlow / Scikit-learn / PyTorch / Keras / XGBoost / Deep Learning / LLM / Prompt Engineering / OpenAI API</li>
+				<li>Machine Learning & AI</li>
+				<li>TensorFlow · PyTorch · Scikit-learn · Keras · XGBoost · Deep Learning · LLMs · Prompt Engineering · OpenAI API · Hugging Face · LangChain · LLaMA · Transformer Models</li>
+			</ul>
+            <ul class="skill-list list-flat">
+				<li>Full-Stack Development</li>
+				<li>React · Node.js · FastAPI · Django · REST APIs · GraphQL · HTML · CSS · JavaScript/TypeScript · Docker · Kubernetes</li>
 			</ul>
 			<ul class="skill-list list-flat">
 				<li>Programming Languages</li>
-				<li>Python / Java / R / JavaScript / Dart / Bash</li>
+				<li>Python · Java · R · JavaScript · TypeScript · Dart · Bash · Solidity · Vyper</li>
 			</ul>
 			<ul class="skill-list list-flat">
-				<li>Database</li>
-				<li>SQL / NOSQL / Postgres / MySQL / MongoDB / Oracle / Microsoft SQL Server</li>
+				<li>Databases & Storage</li>
+				<li>SQL · NoSQL · PostgreSQL · MySQL · MongoDB · Oracle · Microsoft SQL Server · Redis</li>
 			</ul>
             <ul class="skill-list list-flat">
-				<li>Business Intelligence Tools - Data visualization</li>
-				<li>Redash / Tableau</li>
+				<li>Business Intelligence & Data Visualization</li>
+				<li>Redash · Tableau · Looker</li>
 			</ul>
 			<ul class="skill-list list-flat">
-				<li>Cloud</li>
-				<li>Amazon DynamoDB / Amazon Athena / AWS Glue / Amazon EC2 / Amazon Redshift / Amazon S3</li>
+				<li>Cloud & Infrastructure</li>
+				<li>AWS DynamoDB · Amazon Athena · AWS Glue · Amazon EC2 · Amazon Redshift · Amazon S3 · GCP · Azure · CI/CD</li>
 			</ul>
 		</div>
 	</div>
 
     <div class="containers" id="certifications">
         <h1>Certifications</h1>
-        <br><br>
+        </br>
+        </br>
         <div class="certifications">
             <div class="certification">
                 <a href="https://coursera.org/share/1b8e92af45e6fe0fb832fe541404543e" target="_blank">
@@ -504,7 +932,7 @@
 		<div class="containers">
 			<div class="units-row">
 			    <div class="unit">
-			    	<p>© <i>2025</i> <span><b>Abel Mitiku ∙ Software Engineer</b></span></p>
+			    	<p>© <i>2025</i> <span><b>Abel Mitiku ∙ Senior Software Engineer</b></span></p>
 			    </div>
 			    <!-- <div class="unit-50" id="footer">
                     <ul class="social list-flat">
@@ -525,6 +953,37 @@
 	<script src="js/typed.min.js"></script>
     <script src="js/kube.min.js"></script>
     <script src="js/site.js"></script>
+    <script>
+        let currentLightboxIndex = 0;
+        let lightboxImages = [];
+
+        function scrollImages(button, direction) {
+        const wrapper = button.parentElement.querySelector('.image-wrapper');
+        const scrollAmount = wrapper.querySelector('img').clientWidth + 10;
+        wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        function openLightbox(img) {
+        const wrapper = img.parentElement;
+        lightboxImages = Array.from(wrapper.querySelectorAll('img'));
+        currentLightboxIndex = lightboxImages.indexOf(img);
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox(event) {
+        if(event.target.id === 'lightbox' || event.target.classList.contains('close')) {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        }
+
+        function changeLightboxImage(direction) {
+        currentLightboxIndex += direction;
+        if(currentLightboxIndex < 0) currentLightboxIndex = lightboxImages.length -1;
+        if(currentLightboxIndex >= lightboxImages.length) currentLightboxIndex = 0;
+        document.getElementById('lightbox-img').src = lightboxImages[currentLightboxIndex].src;
+        }
+    </script>
     <!-- <script>
 		function newTyped(){}$(function(){$("#typed").typed({
 		// Change to edit type effect
